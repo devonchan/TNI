@@ -255,8 +255,9 @@
             var egcgDose = { 'mg': bodyweightInKg * 5};
 
             if (mgCurcuminPerCaps) {
-                curcuminDose.cap = (bodyweightInKg * 30) / mgCurcuminPerCaps;
-            }
+                curcuminDose.cap = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
+            if (mgEgcgPerCaps) {
+                egcgDose.cap = (bodyweightInKg * 5) / mgEgcgPerCaps; }
 
             var nutriveneDose = null;
             var enzymeDose = null;
@@ -439,7 +440,7 @@
                 if (amountStr != "") {
                     amountStr += " or ";
                 }
-                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + "capsule";
+                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " capsule";
                 if (dosageItem.dose.cap * dosageItem.amount > 1) {
                     amountStr += "s";
                 }
