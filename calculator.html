@@ -130,8 +130,7 @@
 
         <div class="row offset-md-4 mt-2">
             <div class="col">
-                <label>How many milligrams per capsule of curcumin?
-                (If using powder, leave blank)</label>
+                <label>How many milligrams per capsule, scoop, ml, etc. of curcumin?</label>
             </div>
         </div>
         <div class="row">
@@ -151,14 +150,30 @@
             </div>
         </div>
         
+        <div class="row offset-md-4 mt-2">
+            <div class="col">
+                <label>IF using separate EGCG, how many milligrams per capsule, scoop, ml, etc.?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-md-4 col-md-2">
+                <input id="egcg-input" type="text" class="form-control decimal">
+            </div>
+            <div class="col-4">
+                <div class="mt-2">
+                    <p>mg</p>
+                </div>
+            </div>
+        </div>
+        
          <div class="row">
             <div class="col offset-md-4">
                 <div class="radio">
-                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-yes" value="true" checked>
+                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-yes" value="true">
                     <label for="poly-egcg-yes">With EGCG</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-no" value="false">
+                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-no" value="false" checked>
                     <label for="poly-egcg-btn-no">Without EGCG</label>
                 </div>
             </div>
@@ -227,6 +242,7 @@
             }
 
             var mgCurcuminPerCaps = parseFloat($("#curcumin-input").val());
+            var mgEgcgPerCaps = parseFloat($("#egcg-input").val());
 
             var canHaveEnzyme = $("input[name=has-reflux-btn]:checked").val() == "false" &&
                 $("input[name=eat-solids-btn]:checked").val() == "true";
@@ -422,7 +438,7 @@
                 if (amountStr != "") {
                     amountStr += " or ";
                 }
-                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " capsule";
+                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " unit";
                 if (dosageItem.dose.cap * dosageItem.amount > 1) {
                     amountStr += "s";
                 }
