@@ -148,6 +148,19 @@
             <div class="col offset-md-4">
                 <label>Which Polyphenol formula are you using?</label>
             </div>
+        </div>        
+       
+         <div class="row">
+            <div class="col offset-md-4">
+                <div class="radio">
+                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-yes" value="true">
+                    <label for="poly-egcg-yes">With EGCG</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-no" value="false" checked>
+                    <label for="poly-egcg-btn-no">Without EGCG</label>
+                </div>
+            </div>
         </div>
         
         <div class="row offset-md-4 mt-2">
@@ -166,20 +179,6 @@
             </div>
         </div>
         
-         <div class="row">
-            <div class="col offset-md-4">
-                <div class="radio">
-                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-yes" value="true">
-                    <label for="poly-egcg-yes">With EGCG</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="poly-egcg-btn" id="poly-egcg-btn-no" value="false" checked>
-                    <label for="poly-egcg-btn-no">Without EGCG</label>
-                </div>
-            </div>
-        </div>
-
-
         <div class="row mt-4 offset-md-4">
             <div class="col">
                 <button id="calculate-btn" type="button" class="btn btn-default">Calculate</button>
@@ -210,7 +209,9 @@
             <h3>
                 Nutrition Calculator
             </h3>
-            <p>When beginning a new supplement, start at 1/4 - 1/2 dosage. Work up to a full dose over a period of two weeks or more. Phase in one new supplement at a time. Start with NVD, followed by Polyphenol support and curcumin (these can be phased in together), then others as desired.</p>
+            <p>When beginning a new supplement, start at 1/4 - 1/2 dosage. Work up to a full dose over a period of two weeks or more. 
+                Phase in one new supplement at a time. Start with NVD, followed by Polyphenol support and curcumin
+                (these can be phased in together), then others as desired.</p>
             <h3>
                 Dosage
             </h3>
@@ -438,7 +439,7 @@
                 if (amountStr != "") {
                     amountStr += " or ";
                 }
-                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " unit";
+                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + "capsule";
                 if (dosageItem.dose.cap * dosageItem.amount > 1) {
                     amountStr += "s";
                 }
