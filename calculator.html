@@ -405,6 +405,10 @@
         };
 
         var decimalToFraction = function (decimal) {
+            if(decimal <= (1/8)) {
+                return "1/8";
+            }
+            
             var nearestQuarter = Math.floor(decimal * 4) / 4;
             var nearestThird = Math.floor(decimal * 3) / 3;
 
