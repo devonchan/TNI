@@ -395,6 +395,7 @@
                     { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 },
                     { 'name': 'Curcumin', 'dose': curcuminDose, 'amount': 0.5 }];
                 if (canHaveEnzyme) { middayDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
+                if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
                 
                 html += resultBlock("Midday", middayDosageItems);
                 printHtml += resultPrintBlock("Midday", middayDosageItems);
@@ -412,8 +413,6 @@
                     { 'name': 'Curcumin', 'dose': curcuminDose, 'amount': 0.5 },
                     { 'name': 'Nighttime Formula', 'dose': nighttimeDose, 'amount': 1 },
                     { 'name': 'DHA', 'dose': { 'value': "follow dosage on label" } }
-                if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
-
                 ];
 
                 html += resultBlock("Evening", eveDosageItems);
