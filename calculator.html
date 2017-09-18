@@ -254,6 +254,7 @@
             var polyphenolDose = { 'cap': bodyweightInKg / 17 };
             var curcuminDose = { 'mg': bodyweightInKg * 30};
             var egcgDose = { 'mg': bodyweightInKg * 5};
+            var visbiomeDose = { 'pkg': bodyweightInKg / 150 };
 
             if (mgCurcuminPerCaps) {
                 curcuminDose.cap = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
@@ -305,7 +306,10 @@
             var printHtml = "";
             if (numberOfDosages == 2) {
                 //Morning
-                var mornDosageItems = [{ 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 1 }];
+                var mornDosageItems = [
+                    { 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 1 },
+                    { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 }
+                ];
                 if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
 
                 html += resultBlock("Morning", mornDosageItems);
@@ -473,6 +477,15 @@
                 }
                 amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " capsule";
                 if (dosageItem.dose.cap * dosageItem.amount > 1) {
+                    amountStr += "s";
+                }
+            }
+            if ('pkg' in dosageItem.dose) {
+                if (amountStr != "") {
+                    amountStr += " or ";
+                }
+                amountStr += decimalToFraction(dosageItem.dose.pkg * dosageItem.amount) + " package";
+                if (dosageItem.dose.pkg * dosageItem.amount > 1) {
                     amountStr += "s";
                 }
             }
