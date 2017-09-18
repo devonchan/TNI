@@ -26,7 +26,7 @@
         <div class="jumbotron" style="margin-top: 20px;">
             <h1 class="display-3">TNI Supplement Calculator</h1>
             <p class="lead">
-                1 This calculator will provide a suggested dosing schedule for the basic TNI protocol. 
+                This calculator will provide a suggested dosing schedule for the basic TNI protocol. 
                 This includes Nutrivene-D Daily Antioxidant, Nutrivene Polyphenol Support, Longvida Curcumin, 
                 Nutrivene Enzymes, Nutrivene Nighttime, and DHA.
                 <br> <br>               
@@ -331,8 +331,11 @@
             } else if (numberOfDosages == 3) {
                 if (withoutEgcg)  {
                     //Morning
-                    var mornDosageItems = [{ 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 },
-                                        { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 }];
+                    var mornDosageItems = [
+                        { 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 },
+                        { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 }
+                        { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 }
+                    ];
                     if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
 
                     html += resultBlock("Morning", mornDosageItems);
@@ -361,7 +364,10 @@
                 
                 else if (withEgcg)  {
                     //Morning
-                    var mornDosageItems = [{ 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 }];
+                    var mornDosageItems = [
+                        { 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 }
+                        { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 }
+                    ];
                     if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
 
                     html += resultBlock("Morning", mornDosageItems);
@@ -388,7 +394,10 @@
                 }  
             } else if (numberOfDosages == 4) {
                 //Morning
-                var mornDosageItems = [{ 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 }];
+                var mornDosageItems = [
+                    { 'name': 'Nutrivene', 'dose': nutriveneDose, 'amount': 0.5 }
+                    { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 }
+                ];
                 if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
 
                 html += resultBlock("Morning", mornDosageItems);
