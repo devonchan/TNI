@@ -511,9 +511,9 @@
             var remainder = decimal - units;
             
             var remainderStr = "";
-            if(remainder = 0) {
-                remainderStr = " ";
-            } else if(remainder < (1/3)) {
+            if (remainder < (1/4)) { 
+            }
+            else if (remainder < (1/3)) {
                 remainderStr = "1/4";
             } else if (remainder < (1/2)) {
                  remainderStr = "1/3";      
