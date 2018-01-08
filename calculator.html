@@ -166,7 +166,8 @@
         
         <div class="row offset-md-4 mt-2">
             <div class="col">
-                <label>IF using separate EGCG, how many milligrams per capsule, scoop, ml, etc.?</label>
+                <label>IF using separate EGCG, how many milligrams per capsule, scoop, ml, etc.? 
+                    For Nutrivene Green Tea Extract, enter 112.5</label>
             </div>
         </div>
         <div class="row">
@@ -321,7 +322,7 @@
                     { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 },
                     { 'name': 'Curcumin', 'dose': curcuminDose, 'amount': 1 },
                     { 'name': 'Nighttime Formula', 'dose': nighttimeDose, 'amount': 1 },
-                    { 'name': 'DHA', 'dose': { 'value': "follow dosage on label" } }                  
+                    { 'name': 'DHA', 'dose': egcgDose, 'amount': 1 }                  
                 ];
                 if (canHaveEnzyme) { eveDosageItems.splice(3, 0, { 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
                 if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
