@@ -61,6 +61,18 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row offset-md-4 mt-2">
+            <div class="col">
+                <label>Age</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-md-4 col-md-2">
+                <input id="age-input" type="text" class="form-control decimal">
+            </div>
+            
+        </div>
 
         
         <div class="row mt-4 offset-md-4">
