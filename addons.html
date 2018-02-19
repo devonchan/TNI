@@ -24,9 +24,10 @@
     <div class="container">
 
         <div class="jumbotron" style="margin-top: 20px;">
-            <h1 class="display-3">TNI Supplement Calculator</h1>
+            <h1 class="display-3">TNI Add-ons</h1>
             <p class="lead">
-                These are optional add-ons to the TNI protocol.
+                These are optional add-ons to the TNI protocol. Please consult with the T21 Research group to determine
+                which supplements are appropriate for you.
                 <br> <br>               
                 I designed this for my personal reference only. Use at your own risk.
             </p>
@@ -36,7 +37,8 @@
         <div class="row">
             <div class="col">
                 <p>
-                    When beginning a new supplement, start at 1/4 - 1/2 dose. Work up to a full dose over a period of two weeks or more. Phase in one new supplement at a time. Start with NVD, followed by Polyphenol support and curcumin (these can be phased in together), then others as desired.
+                    When beginning a new supplement, start at 1/4 - 1/2 dose. Work up to a full dose over a period of two weeks or more. 
+                    Phase in one new supplement at a time.
                     
                 </p>
             </div>
@@ -62,18 +64,7 @@
             </div>
         </div>
         
-        <div class="row offset-md-4 mt-2">
-            <div class="col">
-                <label>Age</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 offset-md-4 col-md-2">
-                <input id="age-input" type="text" class="form-control decimal">
-            </div>
-            
-        </div>
-
+        
         
         <div class="row mt-4 offset-md-4">
             <div class="col">
@@ -136,18 +127,16 @@
                 $("#result-div").html("");
                 $("#print-result-div").html("");
             }
-            var mgCurcuminPerCaps = parseFloat($("#curcumin-input").val());
-            var mgEgcgPerCaps = parseFloat($("#egcg-input").val());
-            var canHaveEnzyme = $("input[name=has-reflux-btn]:checked").val() == "false" &&
-                $("input[name=eat-solids-btn]:checked").val() == "true";
+                        
+            var piracetamMinDose = { 'mg': bodyweightInKg * 10};
+            var piracetamMaxDose = { 'mg': bodyweightInKg * 30};
+            var cholineMinDose = { 'mg': bodyweightInKg * 3};
+            var cholineMaxDose = { 'mg': bodyweightInKg * 10};
+            var betaglucanDose = { 'mg': bodyweightInKg * 0.3};
+            var betaglucanIllnessDose = { 'mg': bodyweightInKg * 3};
+            var prolineDose = { 'mg': bodyweightInKg * 10};
             
-            var withoutEgcg = $("input[name=poly-egcg-btn]:checked").val() == "false";
-            var withEgcg = $("input[name=poly-egcg-btn]:checked").val() == "true";
             
-            var piracetamDose = { 'mg': bodyweightInKg * 10};
-            var curcuminDose = { 'mg': bodyweightInKg * 30};
-            var egcgDose = { 'mg': bodyweightInKg * 5};
-            var visbiomeDose = { 'pkg': bodyweightInKg / 68, 'cap': bodyweightInKg / 17 };
             var dhaDose = { 'mg': bodyweightInKg * 5};
             if (mgCurcuminPerCaps) {
                 curcuminDose.cap = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
