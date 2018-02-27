@@ -145,8 +145,8 @@
                 $("#zinc-dose").html('');
             }
             
-            var piracetamMinDose = { 'mg': bodyweightInKg * 10};
-            var piracetamMaxDose = { 'mg': bodyweightInKg * 30};
+            var piracetamMinDose = { 'mg': Math.round(bodyweightInKg * 10)};
+            var piracetamMaxDose = { 'mg': Math.round(bodyweightInKg * 30)};
             var cholineMinDose = { 'mg': bodyweightInKg * 3};
             var cholineMaxDose = { 'mg': bodyweightInKg * 10};
             var betaglucanDose = { 'mg': bodyweightInKg * 0.3};
@@ -155,7 +155,7 @@
             
             var dhaDose = { 'mg': bodyweightInKg * 5};
             
-            $("#bg-dose").html(piracetamMinDose.mg.toFixed(2) + ' - ' + piracetamMaxDose.mg.toFixed(2) + ' mg');
+            $("#bg-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
             $("#glu-dose").html(piracetamMaxDose.mg.toFixed(2) + ' mg');
             $("#zinc-dose").html(cholineMinDose.mg.toFixed(2) + ' mg');
         };
