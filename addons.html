@@ -78,7 +78,14 @@
                     <h3 class="card-header">
                         Dosage
                     </h3>
-                    <div id="result-div"></div>
+                    <div id="result-div">
+                        <table style="width:100%">
+                            <tr>
+                                <td>Beta Glucan</td>
+                                <td id="bg-dose"></td> 
+                            </tr>
+                        </table>
+                    </div>
                     <div class="row mt-1 mb-1">
                         <div class="col mr-2">
                             <button id="print-btn" type="button" class="float-right btn btn-default">Print</button>
@@ -136,6 +143,8 @@
             var betaglucanIllnessDose = { 'mg': bodyweightInKg * 3};
             var prolineDose = { 'mg': bodyweightInKg * 10};
             
+            
+            $("#bg-dose").html(piracetamMinDose.mg);
             
             var dhaDose = { 'mg': bodyweightInKg * 5};
             
