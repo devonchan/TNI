@@ -79,6 +79,7 @@
                         Dosage
                     </h3>
                     <div class="row">
+                        <div>
                         <table class="table-bordered">
                             <tr>
                                 <td>Beta Glucan</td>
@@ -93,6 +94,7 @@
                                 <td id="zinc-dose"></td> 
                             </tr>
                         </table>
+                            </div>
                     </div>
                     <div class="row mt-1 mb-1">
                         <div class="col mr-2">
@@ -139,6 +141,12 @@
                 bodyweightInKg = bodyweightInKg / 2.20462;
             }
             
+           if (!bodyweightInKg) {
+                $("#bg-dose").html('');
+                $("#glu-dose").html('');
+                $("#zinc-dose").html('');
+            }
+            
             var piracetamMinDose = { 'mg': bodyweightInKg * 10};
             var piracetamMaxDose = { 'mg': bodyweightInKg * 30};
             var cholineMinDose = { 'mg': bodyweightInKg * 3};
@@ -150,7 +158,7 @@
             var dhaDose = { 'mg': bodyweightInKg * 5};
             
             $("#bg-dose").html(piracetamMinDose.mg.toFixed(2) + ' mg');
-            $("#gu-dose").html(piracetamMaxDose.mg.toFixed(2) + ' mg');
+            $("#glu-dose").html(piracetamMaxDose.mg.toFixed(2) + ' mg');
             $("#zinc-dose").html(cholineMinDose.mg.toFixed(2) + ' mg');
         };
          $(function () {
