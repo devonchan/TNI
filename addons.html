@@ -138,11 +138,7 @@
             if (bodyweightIsLbs) {
                 bodyweightInKg = bodyweightInKg / 2.20462;
             }
-            if (!bodyweightInKg) {
-                $("#result-div").html("");
-                $("#print-result-div").html("");
-            }
-                        
+            
             var piracetamMinDose = { 'mg': bodyweightInKg * 10};
             var piracetamMaxDose = { 'mg': bodyweightInKg * 30};
             var cholineMinDose = { 'mg': bodyweightInKg * 3};
@@ -153,10 +149,34 @@
             
             var dhaDose = { 'mg': bodyweightInKg * 5};
             
-            $("#bg-dose").html(piracetamMinDose.mg + ' mg');
-            $("#gu-dose").html(piracetamMaxDose.mg + ' mg');
-            $("#zinc-dose").html(cholineMinDose.mg + ' mg');
+            $("#bg-dose").html(piracetamMinDose.mg.toFixed(2) + ' mg');
+            $("#gu-dose").html(piracetamMaxDose.mg.toFixed(2) + ' mg');
+            $("#zinc-dose").html(cholineMinDose.mg.toFixed(2) + ' mg');
         };
+         $(function () {
+            $("#calculate-btn").click(function () {
+                calculateResult();
+                $("#dosages-div").removeAttr('hidden');
+            });
+            $("#print-btn").click(function () {
+                var prtContent = document.getElementById("print-div");
+                var winPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+                winPrint.document.write(prtContent.innerHTML);
+                winPrint.document.close();
+                winPrint.focus();
+                winPrint.print();
+                winPrint.close();
+            });
+        });
+        $('.decimal').keyup(function () {
+            var val = $(this).val();
+            if (isNaN(val)) {
+                val = val.replace(/[^0-9\.]/g, '');
+                if (val.split('.').length > 2)
+                    val = val.replace(/\.+$/, "");
+            }
+            $(this).val(val);
+        });
     </script>
 
 </body>
