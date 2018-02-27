@@ -81,16 +81,32 @@
                         <div class="card-block">
                         <table class="table-bordered">
                             <tr>
-                                <td>Beta Glucan</td>
-                                <td id="bg-dose"></td> 
+                                <td>Piracetam</td>
+                                <td id="pir-dose"></td> 
                             </tr>
                             <tr>
-                                <td>Gluththione</td>
+                                <td>Choline</td>
+                                <td id="chol-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Beta Glucan maintenance</td>
+                                <td id="bgm-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Beta Glucan illness</td>
+                                <td id="bgi-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Glutathione</td>
                                 <td id="glu-dose"></td> 
                             </tr>
                             <tr>
                                 <td>Zinc</td>
-                                <td id="zinc-dose"></td> 
+                                <td id="zinc-dose"></td>
+                            </tr>
+                            <tr>
+                                <td>Butyrate</td>
+                                <td id="but-dose"></td> 
                             </tr>
                         </table>
                             </div>
@@ -140,24 +156,36 @@
             }
             
            if (!bodyweightInKg) {
-                $("#bg-dose").html('');
+                $("#pir-dose").html('');
+                $("#chol-dose").html('');
+               $("#bgm-dose").html('');
+               $("#bgi-dose").html('');
+               $("#pro-dose").html('');
                 $("#glu-dose").html('');
                 $("#zinc-dose").html('');
+               $("#but-dose").html('');
             }
             
             var piracetamMinDose = { 'mg': Math.round(bodyweightInKg * 10)};
             var piracetamMaxDose = { 'mg': Math.round(bodyweightInKg * 30)};
-            var cholineMinDose = { 'mg': bodyweightInKg * 3};
-            var cholineMaxDose = { 'mg': bodyweightInKg * 10};
-            var betaglucanDose = { 'mg': bodyweightInKg * 0.3};
-            var betaglucanIllnessDose = { 'mg': bodyweightInKg * 3};
-            var prolineDose = { 'mg': bodyweightInKg * 10};
+            var cholineMinDose = { 'mg': Math.round(bodyweightInKg * 3)};
+            var cholineMaxDose = { 'mg': Math.round(bodyweightInKg * 10)};
+            var betaglucanDose = { 'mg': Math.round(bodyweightInKg * 0.3)};
+            var betaglucanIllnessDose = { 'mg': Math.round(bodyweightInKg * 3)};
+            var prolineDose = { 'mg': Math.round(bodyweightInKg * 10)};
+            var glutathioneMinDose = { 'mg': Math.round(bodyweightInKg * 4)};
+            var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
             
-            var dhaDose = { 'mg': bodyweightInKg * 5};
             
-            $("#bg-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
-            $("#glu-dose").html(piracetamMaxDose.mg.toFixed(2) + ' mg');
-            $("#zinc-dose").html(cholineMinDose.mg.toFixed(2) + ' mg');
+            $("#pir-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
+            $("#chol-dose").html(cholineMinDose.mg + ' - ' + cholineMaxDose.mg + ' mg');
+            $("#bgm-dose").html(betaglucanDose.mg.toFixed(2) + ' mg');
+            $("#bgi-dose").html(betaglucanIllnessDose.mg + ' mg ' + ' up to 3 times per day');
+            $("#pro-dose").html(prolineDose.mg.toFixed(2) + ' mg');
+            $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
+            
+
+            
         };
          $(function () {
             $("#calculate-btn").click(function () {
