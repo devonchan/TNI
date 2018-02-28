@@ -101,8 +101,12 @@
                                 <td id="pro-dose"></td> 
                             </tr>
                             <tr>
-                                <td>Glutathione</td>
+                                <td>Glutathione (detox)</td>
                                 <td id="glu-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Glutathione (Tylenol)</td>
+                                <td id="gluT-dose"></td> 
                             </tr>
                             <tr>
                                 <td>Zinc</td>
@@ -110,6 +114,10 @@
                             </tr>
                             <tr>
                                 <td>Butyrate</td>
+                                <td id="but-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Valerian Root</td>
                                 <td id="but-dose"></td> 
                             </tr>
                         </table>
@@ -179,6 +187,7 @@
             var prolineDose = { 'mg': Math.round(bodyweightInKg * 10)};
             var glutathioneMinDose = { 'mg': Math.round(bodyweightInKg * 4)};
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
+            var glutathioneTylenolDose = { 'mg': Math.round(bodyweightInKg * 8)};
             
             
             $("#pir-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
@@ -187,6 +196,7 @@
             $("#bgi-dose").html(betaglucanIllnessDose.mg + ' mg ' + ' up to 3 times per day');
             $("#pro-dose").html(prolineDose.mg + ' mg');
             $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
+            $("#gluT-dose").html(glutathioneTylenolDose.mg + ' mg');
             
 
             
