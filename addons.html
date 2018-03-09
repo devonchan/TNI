@@ -109,17 +109,14 @@
                                 <td id="gluT-dose"></td> 
                             </tr>
                             <tr>
-                                <td>Zinc</td>
-                                <td id="zinc-dose"></td>
+                                <td>Valerian Root</td>
+                                <td id="val-dose"></td> 
                             </tr>
                             <tr>
                                 <td>Butyrate</td>
                                 <td id="but-dose"></td> 
                             </tr>
-                            <tr>
-                                <td>Valerian Root</td>
-                                <td id="but-dose"></td> 
-                            </tr>
+                            
                         </table>
                             </div>
                     <div class="row mt-1 mb-1">
@@ -188,6 +185,7 @@
             var glutathioneMinDose = { 'mg': Math.round(bodyweightInKg * 4)};
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
             var glutathioneTylenolDose = { 'mg': Math.round(bodyweightInKg * 8)};
+            var valerianDose = { 'mg': Math.round(bodyweightInKg * 6)};
             
             
             $("#pir-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
@@ -197,6 +195,7 @@
             $("#pro-dose").html(prolineDose.mg + ' mg');
             $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
             $("#gluT-dose").html(glutathioneTylenolDose.mg + ' mg');
+            $("#val-dose").html(valerianDose.mg + ' mg');
             
 
             
