@@ -145,6 +145,29 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row mt-4">
+            <div class="col offset-md-4">
+                <label>Which Nutrivene product are you using?</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col offset-md-4">
+                <div class="radio">
+                    <input type="radio" name="nutrivene-type-btn" id="nutrivene-type-btn-pdr" value="pdr">
+                    <label for="nutrivene-type-btn-pdr">Powder</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="nutrivene-type-btn" id="nutrivene-type-btn-micro" value="micro" checked>
+                    <label for="nutrivene-type-btn-micro">Microencapsulated</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="nutrivene-type-btn" id="nutrivene-type-btn-cap" value="cap">
+                    <label for="nutrivene-type-btn-cap">Capsule</label>
+                </div>
+            </div>
+        </div>
 
         <div class="row offset-md-4 mt-2">
             <div class="col">
@@ -288,19 +311,19 @@
             var enzymeDose = null;
 
             // Nutrivene & Enzyme
-            if (bodyweightInKg < 5.0) {
+            if (bodyweightInKg < 4.5) {
                 nutriveneDose = { 'tsp': 0.25, 'cap': 1 };
                 enzymeDose = { 'cap': 1 };
-            } else if (bodyweightInKg < 10.0) {
+            } else if (bodyweightInKg < 9.0) {
                 nutriveneDose = { 'tsp': 0.5, 'cap': 2 };
                 enzymeDose = { 'cap': 1 };
-            } else if (bodyweightInKg < 19.0) {
+            } else if (bodyweightInKg < 18.0) {
                 nutriveneDose = { 'tsp': 1, 'cap': 4 };
                 enzymeDose = { 'cap': 1 };
-            } else if (bodyweightInKg < 28.0) {
+            } else if (bodyweightInKg < 27.0) {
                 nutriveneDose = { 'tsp': 0.75, 'cap': 6 };
                 enzymeDose = { 'cap': 2 };
-            } else if (bodyweightInKg < 38.0) {
+            } else if (bodyweightInKg < 36.0) {
                 nutriveneDose = { 'tsp': 1.5, 'cap': 9 };
                 enzymeDose = { 'cap': 2 };
             } else {
