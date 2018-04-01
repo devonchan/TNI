@@ -374,14 +374,11 @@
             if (numberOfDosages == 2) {
                 //Morning
                 var mornDosageItems = [
-                    if (nutrivenePdr) 
-                        { 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 1 },
-                    else if (nutriveneMicro) 
-                        { 'name': 'OR Nutrivene Microencapsulated', 'dose': nutriveneMicroDose, 'amount': 1 },
-                    else if (nutriveneCaps)     
-                        { 'name': 'OR Nutrivene Capsules', 'dose': nutriveneCapsDose, 'amount': 1 },
-                        { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
-                        { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } }
+                    { 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 1 },
+                    { 'name': 'OR Nutrivene Microencapsulated', 'dose': nutriveneMicroDose, 'amount': 1 },
+                    { 'name': 'OR Nutrivene Capsules', 'dose': nutriveneCapsDose, 'amount': 1 },
+                    { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
+                    { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } }
                 ];
                 if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
 
