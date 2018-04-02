@@ -248,6 +248,7 @@
             }else if($("input[name=age-btn]:checked").val() == "adult"){
                 melatoninDose = { 'mg': 10.0};
                 piracetamMaxDose.mg = Math.round(bodyweightInKg * 50)
+                cholineMaxDose.mg = Math.round(bodyweightInKg * 16.67)
             }
             
             $("#pir-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
