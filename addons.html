@@ -17,6 +17,14 @@
             margin: 0px 5px;
         }
     </style>
+    <style>
+            td{
+            padding: 3px !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -91,7 +99,7 @@
                     <label for="age-btn-tod">Toddler</label>
                 </div>
                 <div class="radio">
-                    <input type="radio" name="age-btn" value="child">
+                    <input type="radio" name="age-btn" value="child" checked>
                     <label for="age-btn-child">Child</label>
                 </div>
                 <div class="radio">
@@ -196,6 +204,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
     <script type="text/javascript">
+        /*global $*/
         var calculateResult = function () {
             var bodyweightInKg = parseFloat($("#bodyweight-input").val());
             var bodyweightIsLbs = $("input[name=bodyweight-unit]:checked").val() == "lb"; //true if lb is checked, false if kg is checked
@@ -225,7 +234,21 @@
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
             var glutathioneTylenolDose = { 'mg': Math.round(bodyweightInKg * 8)};
             var valerianDose = { 'mg': Math.round(bodyweightInKg * 6)};
+            var melatoninDose = null
             
+            if($("input[name=age-btn]:checked").val() == "inf"){
+                melatoninDose = { 'mg': 1.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "tod"){
+                melatoninDose = { 'mg': 3.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "child"){
+                melatoninDose = { 'mg': 5.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "adult"){
+                melatoninDose = { 'mg': 10.0};
+                piracetamMaxDose.mg = Math.round(bodyweightInKg * 50)
+            }
             
             $("#pir-dose").html(piracetamMinDose.mg + ' - ' + piracetamMaxDose.mg + ' mg');
             $("#chol-dose").html(cholineMinDose.mg + ' - ' + cholineMaxDose.mg + ' mg');
@@ -235,10 +258,9 @@
             $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
             $("#gluT-dose").html(glutathioneTylenolDose.mg + ' mg');
             $("#val-dose").html(valerianDose.mg + ' mg');
-            
-
-            
+            $("#mel-dose").html(melatoninDose.mg + ' mg');
         };
+        
          $(function () {
             $("#calculate-btn").click(function () {
                 calculateResult();
