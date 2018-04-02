@@ -666,14 +666,19 @@
             // egcgDose
             if (withoutEgcg){
                 body = body + shoppingListResultItem(
-                                "OR other EGCG (total capsules or ml)", 
-                                ((egcgDose.cap * 30 * months)).toFixed(1));                
+                                "OR other EGCG (total grams)", 
+                                ((egcgDose.mg * 30 * months)/1000).toFixed(1));                
                 }                
                                 
             // visbiomeDose
                 {body = body + shoppingListResultItem(
                                 "Visbiome packages", 
                                 (visbiomeDose.pkg * 30 * months).toFixed(1));
+                }
+                
+                {body = body + shoppingListResultItem(
+                                "OR Visbiome capsules", 
+                                (visbiomeDose.cap * 30 * months).toFixed(1));
                 }
             
             return body
