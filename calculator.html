@@ -655,6 +655,11 @@
                                 "Nutrivene Curcumin", 
                                 ((curcuminDose.mg * 30 * months)/30000).toFixed(1));
             
+            // other curcuminDose
+               {body = body + shoppingListResultItem(
+                                "OR other curcumin (total grams)", 
+                                ((curcuminDose.mg * 30 * months)/1000).toFixed(1)); 
+            
                 }    
             // egcgDose
             if (withoutEgcg) {
