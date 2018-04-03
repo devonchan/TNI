@@ -179,7 +179,7 @@
             <div class="col">
                 <label>How many milligrams per capsule, scoop, ml, etc. of curcumin?
                 <br>
-                For Nutrivene Curcumin, enter 1000 for white scoop, or 725 for 1/4 tsp measuring spoon</label>
+                For Nutrivene Curcumin, enter 500 for capsules, 1000 for the white scoop, or 725 for 1/4 tsp measuring spoon</label>
             </div>
         </div>
         <div class="row">
@@ -216,7 +216,10 @@
             <div class="col">
                 <label>IF using separate EGCG, how many milligrams per capsule, scoop, ml, etc.?
                     <br>
-                    For Nutrivene Green Tea Extract, enter 112.5</label>
+                    For Nutrivene Green Tea Extract, enter 112.5
+                    <br>
+                    For Dr Elizabeth's EGCG tincture, enter 125
+                    </label>
             </div>
         </div>
         <div class="row">
@@ -623,68 +626,76 @@
             
             if (nutrivenePdr) { // nutrivenePdrDose
                 body = body + shoppingListResultItem(
-                                "Nutrivene Powder 156g bottle",
+                                "Nutrivene Daily Powder (bottles)",
                                 ((nutrivenePdrDose.tsp * 3.3 * 30 * months)/156).toFixed(1));
             } 
             else if (nutriveneMicro){ // nutriveneMicroDose
                 body = body + shoppingListResultItem(
-                                "Nutrivene Microencapsulated 165g", 
+                                "Nutrivene Daily Microencapsulated (bottles)", 
                                 ((nutriveneMicroDose.tsp * 2.85 * 30 * months)/165).toFixed(1));
             } 
             else if (nutriveneCaps) { // nutriveneCapsDose
                 body = body + shoppingListResultItem(
-                                "Nutrivene Capsules", 
+                                "Nutrivene Daily Capsules (bottles)", 
                                 ((nutriveneCapsDose.cap * 30 * months)/294).toFixed(1));
             }
             
             // enzymeDose
             if (canHaveEnzyme) {
                 body = body + shoppingListResultItem(
-                                "Nutrivene Enzyme", 
+                                "Nutrivene Enzyme (bottles)", 
                                 ((enzymeDose.cap * 30 * months)/90).toFixed(1));
             }
             
+            //nighttimeDose
+                {body = body + shoppingListResultItem(
+                                "Nutrivene Nighttime (bottles)", 
+                                ((nighttimeDose.cap * 30 * months)/45).toFixed(1));
+                }
+                
             // polyphenolDose
                 {body = body + shoppingListResultItem(
-                                "Polyphenol", 
+                                "Nutrivene Polyphenol (bottles)", 
                                 ((polyphenolDose.cap * 30 * months)/120).toFixed(1));
                 }
                 
             // curcuminDose
                 {body = body + shoppingListResultItem(
-                                "Nutrivene Curcumin", 
+                                "Nutrivene Curcumin (bottles)", 
                                 ((curcuminDose.mg * 30 * months)/30000).toFixed(1));
-            
-            // other curcuminDose
-               {body = body + shoppingListResultItem(
-                                "OR other curcumin (total grams)", 
-                                ((curcuminDose.mg * 30 * months)/1000).toFixed(1)); 
-            
                 }    
+                {body = body + shoppingListResultItem(
+                                "OR other Longvida curcumin (total grams)", 
+                                ((curcuminDose.mg * 30 * months)/1000).toFixed(1));
+                }
+        
+        
             // egcgDose
             if (withoutEgcg) {
                 body = body + shoppingListResultItem(
-                                "Nutrivene Green Tea Extract", 
+                                "Nutrivene Green Tea Extract (bottles)", 
                                 ((egcgDose.mg * 30 * months)/6750).toFixed(1));
                 }         
                          
-            // egcgDose
+            // other Egcg
             if (withoutEgcg){
                 body = body + shoppingListResultItem(
                                 "OR other EGCG (total grams)", 
                                 ((egcgDose.mg * 30 * months)/1000).toFixed(1));                
                 }                
                                 
-            // visbiomeDose
+            // Visbiome
                 {body = body + shoppingListResultItem(
-                                "Visbiome packages", 
-                                (visbiomeDose.pkg * 30 * months).toFixed(1));
+                                "Visbiome packages (30 pkg boxes)", 
+                                ((visbiomeDose.pkg * 30 * months)/30).toFixed(1));
                 }
                 
                 {body = body + shoppingListResultItem(
-                                "OR Visbiome capsules", 
-                                (visbiomeDose.cap * 30 * months).toFixed(1));
+                                "OR Visbiome capsules (60 cap bottles)", 
+                                ((visbiomeDose.cap * 30 * months)/60).toFixed(1));
                 }
+                
+            
             
             return body
         };
