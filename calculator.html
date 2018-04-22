@@ -366,7 +366,7 @@
             nutriveneMicro = $("input[name=nutrivene-type-btn]:checked").val() == "micro";
             nutriveneCaps = $("input[name=nutrivene-type-btn]:checked").val() == "caps";
 
-            polyphenolDose = { 'cap': Math.Max(bodyweightInKg / 17,  maxPolyphenolDose)}
+            polyphenolDose = { 'cap': Math.max(bodyweightInKg / 17,  maxPolyphenolDose)}
             curcuminDose = { 'mg': bodyweightInKg * 30};
             egcgDose = { 'mg': bodyweightInKg * 5};
             visbiomeDose = { 'pkg': bodyweightInKg / 68, 'cap': bodyweightInKg / 17 };
