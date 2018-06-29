@@ -321,7 +321,10 @@
         var nutriveneMicroDose = null;
         var nutriveneCapsDose = null;
         var enzymeDose = null;
+        
         var polyphenolDose = null;
+        var maxPolyphenolDose = 4; //Caps
+        
         var curcuminDose = null;
         var egcgDose = null;
         var visbiomeDose = null;
@@ -363,7 +366,7 @@
             nutriveneMicro = $("input[name=nutrivene-type-btn]:checked").val() == "micro";
             nutriveneCaps = $("input[name=nutrivene-type-btn]:checked").val() == "caps";
 
-            polyphenolDose = { 'cap': bodyweightInKg / 17 };
+            polyphenolDose = { 'cap': Math.min(bodyweightInKg / 17,  maxPolyphenolDose)}
             curcuminDose = { 'mg': bodyweightInKg * 30};
             egcgDose = { 'mg': bodyweightInKg * 5};
             visbiomeDose = { 'pkg': bodyweightInKg / 68, 'cap': bodyweightInKg / 17 };
