@@ -163,6 +163,10 @@
                                 <td>Melatonin</td>
                                 <td id="mel-dose"></td> 
                             </tr>
+                            <tr>
+                                <td>Lithium Orotate</td>
+                                <td id="lith-dose"></td> 
+                            </tr>
                             
                         </table>
                             </div>
@@ -221,6 +225,7 @@
                 $("#glu-dose").html('');
                 $("#zinc-dose").html('');
                $("#but-dose").html('');
+               $("#lith-dose").html('');
             }
             
             var piracetamMinDose = { 'mg': Math.round(bodyweightInKg * 10)};
@@ -234,6 +239,7 @@
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
             var glutathioneTylenolDose = { 'mg': Math.round(bodyweightInKg * 8)};
             var valerianDose = { 'mg': Math.round(bodyweightInKg * 6)};
+            var lithiumDose = { 'mg': Math.round(bodyweightInKg * 0.07)};
             var melatoninDose = null
             
             if($("input[name=age-btn]:checked").val() == "inf"){
@@ -260,6 +266,7 @@
             $("#gluT-dose").html(glutathioneTylenolDose.mg + ' mg');
             $("#val-dose").html(valerianDose.mg + ' mg');
             $("#mel-dose").html(melatoninDose.mg + ' mg');
+            $("#lith-dose").html(lithiumDose.mg + ' mg');
         };
         
          $(function () {
