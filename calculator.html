@@ -216,7 +216,7 @@
             <div class="col">
                 <label>IF using separate EGCG, how many milligrams per capsule, scoop, ml, etc.?
                     <br>
-                    For Nutrivene Green Tea Extract, enter 112.5
+                    For Nutrivene Green Tea Extract, enter 112.5 (result will be in capsules)
                     <br>
                     For Dr Elizabeth's EGCG tincture, enter 125 (result will be in millilitres)
                     </label>
@@ -378,9 +378,9 @@
             cholDose = { 'mg' : bodyweightInKg * 4};
 
             if (mgCurcuminPerCaps) {
-                curcuminDose.cap = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
+                curcuminDose.unit = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
             if (mgEgcgPerCaps) {
-                egcgDose.cap = (bodyweightInKg * 5) / mgEgcgPerCaps; }
+                egcgDose.unit = (bodyweightInKg * 5) / mgEgcgPerCaps; }
 
             // Nutrivene & Enzyme
             if (bodyweightInKg < 4.5) {
@@ -757,6 +757,15 @@
             }
             if ('mcg' in dosageItem.dose) {
                 amountStr += Math.floor(dosageItem.dose.mcg * dosageItem.amount) + " mcg";
+            }
+            if ('unit' in dosageItem.dose) {
+                if (amountStr != "") {
+                    amountStr += " or ";
+                }
+                amountStr += decimalToFraction(dosageItem.dose.cap * dosageItem.amount) + " cap/scoop/ml/etc.";
+                if (dosageItem.dose.cap * dosageItem.amount > 1) {
+                    amountStr += "s";
+                }
             }
             if ('tsp' in dosageItem.dose) {
                 if (amountStr != "") {
