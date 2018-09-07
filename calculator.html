@@ -485,14 +485,19 @@
                     printHtml += resultPrintBlock("Morning", mornDosageItems);
 
                     //Midday
-                    var middayDosageItems = [{ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }];
+                    var middayDosageItems = [
+                        ];
                     if (canHaveEnzyme) { middayDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
+                    if (nutrivenePdr) { middayDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
+                    if (nutriveneMicro) { middayDosageItems.push({ 'name': 'Nutrivene Microencapsulated', 'dose': nutriveneMicroDose, 'amount': 0.5 }); }
+                    if (nutriveneCaps) { middayDosageItems.push({ 'name': 'Nutrivene Capsules', 'dose': nutriveneCapsDose, 'amount': 0.5 }); }
 
                     html += resultBlock("Midday", middayDosageItems);
                     printHtml += resultPrintBlock("Midday", middayDosageItems);
 
                     //Evening
                     var eveDosageItems = [
+                        { 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 },
                         { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 },
                         { 'name': 'Curcumin', 'dose': curcuminDose, 'amount': 1 },
                         { 'name': 'Nighttime Formula', 'dose': nighttimeDose, 'amount': 1 },
@@ -573,7 +578,7 @@
                     { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 },
                     { 'name': 'Curcumin', 'dose': curcuminDose, 'amount': 0.5 }];
                 if (canHaveEnzyme) { middayDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
-                if (withoutEgcg) { middayDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
+                if (withoutEgcg) { middayDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 0.5 }); }
                 
                 html += resultBlock("Midday", middayDosageItems);
                 printHtml += resultPrintBlock("Midday", middayDosageItems);
@@ -599,7 +604,9 @@
                     { 'name': 'Luteolin/Rutin', 'dose': lrcDose, 'amount': 1}, 
                     { 'name': 'Huperzine A', 'dose': hupaDose, 'amount': 1}, 
                     { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}
-                ];
+                        ];
+                    if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 0.5 }); }
+                
 
                 html += resultBlock("Evening", eveDosageItems);
                 printHtml += resultPrintBlock("Evening", eveDosageItems);
