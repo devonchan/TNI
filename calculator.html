@@ -771,10 +771,8 @@
                 if (amountStr != "") {
                     amountStr += " or ";
                 }
-                amountStr += decimalToFraction(dosageItem.dose.unit * dosageItem.amount) + " cap,scoop,ml,etc.";
-                if (dosageItem.dose.unit * dosageItem.amount > 1) {
-                    amountStr += "s";
-                }
+                amountStr += decimalToFraction(dosageItem.dose.unit * dosageItem.amount) + " cap, scoop, ml, etc.";
+                
             }
             if ('tsp' in dosageItem.dose) {
                 if (amountStr != "") {
