@@ -634,6 +634,12 @@
                 html += resultBlock("Evening", eveDosageItems);
                 printHtml += resultPrintBlock("Evening", eveDosageItems);
             };
+
+            if (bodyweightInKg <= 9) {
+                html = "<div class=\"card-block\"><h3 class=\"card-title\">Seek medical advice for under 9kg</div>";
+                printHtml = html;
+            }
+
             $("#result-div").html(html);
             $("#print-result-div").html(printHtml);
         };
