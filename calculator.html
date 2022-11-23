@@ -346,6 +346,8 @@
         var dhaDose = null;
         var lrcDose = null;
         var cholDose = null;
+        var apigDose = null;
+        var hespDose = null;
         
         var nutrivenePdr = false;
         var nutriveneMicro = false;
@@ -391,6 +393,8 @@
             lrcDose = { 'mg' : bodyweightInKg * 1.5};
             hupaDose = { 'mcg' : bodyweightInKg * 3};
             cholDose = { 'mg' : bodyweightInKg * 4};
+            apigDose = { 'mg' : bodyweightInKg * 1.1};
+            hespDose = { 'mg' : bodyweightInKg * 10};
 
             if (mgCurcuminPerCaps) {
                 curcuminDose.unit = (bodyweightInKg * 30) / mgCurcuminPerCaps; }
@@ -465,7 +469,8 @@
                 var mornDosageItems = [
                     { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
                     { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } },
-                    { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}
+                    { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1},
+                    { 'name': 'Hesperidin', 'dose': hespDose, 'amount': 1}
                 ];
                 if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
                 if (nutrivenePdr) { mornDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
@@ -483,7 +488,8 @@
                     { 'name': 'DHA', 'dose': { 'value': "according to label" } }, 
                     { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}, 
                     { 'name': 'Huperzine A', 'dose': hupaDose, 'amount': 1}, 
-                    { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}
+                    { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}, 
+                    { 'name': 'Apiginen', 'dose': apigDose, 'amount': 1}
                 ];
                 if (canHaveEnzyme) { eveDosageItems.splice(3, 0, { 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
                 if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
@@ -498,7 +504,8 @@
                         { 'name': 'Polyphenol', 'dose': polyphenolDose, 'amount': 1 },
                         { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
                         { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } },
-                        { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}
+                        { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1},
+                        { 'name': 'Hesperidin', 'dose': hespDose, 'amount': 1}
                     ];
                     if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
                     if (nutrivenePdr) { mornDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
@@ -526,7 +533,8 @@
                         { 'name': 'DHA', 'dose': { 'value': "according to label" } },
                         { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}, 
                         { 'name': 'Huperzine A', 'dose': hupaDose, 'amount': 1}, 
-                        { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}
+                        { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}, 
+                        { 'name': 'Apiginen', 'dose': apigDose, 'amount': 1}
                     ];
                     if (nutrivenePdr) { eveDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
                     if (nutriveneMicro) { eveDosageItems.push({ 'name': 'Nutrivene Microencapsulated', 'dose': nutriveneMicroDose, 'amount': 0.5 }); }
@@ -543,7 +551,8 @@
                     var mornDosageItems = [
                         { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
                         { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } },
-                        { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}
+                        { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1},
+                        { 'name': 'Hesperidin', 'dose': hespDose, 'amount': 1}
                     ];
                     if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
                     if (nutrivenePdr) { mornDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
@@ -573,7 +582,8 @@
                         { 'name': 'DHA', 'dose': { 'value': "according to label" } },
                         { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}, 
                         { 'name': 'Huperzine A', 'dose': hupaDose, 'amount': 1}, 
-                        { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}
+                        { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}, 
+                        { 'name': 'Apiginen', 'dose': apigDose, 'amount': 1}
                     ];
                     if (canHaveEnzyme) { eveDosageItems.splice(2, 0, { 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }              
 
@@ -585,7 +595,8 @@
                 var mornDosageItems = [
                     { 'name': 'Visbiome', 'dose': visbiomeDose, 'amount': 1 },
                     { 'name': 'Mango or Papaya Powder', 'dose': { 'value': "according to symptoms" } },
-                    { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}
+                    { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1},
+                    { 'name': 'Hesperidin', 'dose': hespDose, 'amount': 1}
                 ];
                 if (canHaveEnzyme) { mornDosageItems.push({ 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 1 / 3 }); }
                 if (nutrivenePdr) { mornDosageItems.push({ 'name': 'Nutrivene Powder', 'dose': nutrivenePdrDose, 'amount': 0.5 }); }
@@ -626,7 +637,8 @@
                     { 'name': 'DHA', 'dose': { 'value': "according to label" } },
                     { 'name': 'Luteolin/Rutin*', 'dose': lrcDose, 'amount': 1}, 
                     { 'name': 'Huperzine A', 'dose': hupaDose, 'amount': 1}, 
-                    { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}
+                    { 'name': 'Choline Bitarate', 'dose': cholDose, 'amount': 1}, 
+                    { 'name': 'Apiginen', 'dose': apigDose, 'amount': 1}
                         ];
                     if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
                 
