@@ -393,7 +393,7 @@
             lrcDose = { 'mg' : bodyweightInKg * 1.5};
             hupaDose = { 'mcg' : bodyweightInKg * 3};
             cholDose = { 'mg' : bodyweightInKg * 4};
-            apigDose = { 'mg' : bodyweightInKg * 1.1};
+            apigDose = { 'mg23' : bodyweightInKg * 1.1};
             hespDose = { 'mg' : bodyweightInKg * 10};
 
             if (mgCurcuminPerCaps) {
@@ -800,6 +800,9 @@
             var amountStr = "";
             if ('mg' in dosageItem.dose) {
                 amountStr += Math.floor(dosageItem.dose.mg * dosageItem.amount) + " mg";
+            }
+            if ('mg23' in dosageItem.dose) {
+                amountStr += Math.floor(dosageItem.dose.mg * dosageItem.amount) + " mg 2-3x per wk";
             }
             if ('mcg' in dosageItem.dose) {
                 amountStr += Math.floor(dosageItem.dose.mcg * dosageItem.amount) + " mcg";
