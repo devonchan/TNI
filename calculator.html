@@ -802,7 +802,7 @@
                 amountStr += Math.floor(dosageItem.dose.mg * dosageItem.amount) + " mg";
             }
             if ('mg23' in dosageItem.dose) {
-                amountStr += Math.floor(dosageItem.dose.mg * dosageItem.amount) + " mg 2-3x per wk";
+                amountStr += Math.floor(dosageItem.dose.mg23 * dosageItem.amount) + " mg 2-3x per wk";
             }
             if ('mcg' in dosageItem.dose) {
                 amountStr += Math.floor(dosageItem.dose.mcg * dosageItem.amount) + " mcg";
