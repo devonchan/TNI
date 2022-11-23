@@ -388,7 +388,7 @@
 
             polyphenolDose = { 'cap': Math.min(bodyweightInKg / 17,  maxPolyphenolDose)}
             curcuminDose = { 'mg': bodyweightInKg * 30};
-            egcgDose = { 'mg': bodyweightInKg * 5, maxEgcgDose};
+            egcgDose = { 'mg': Math.min(bodyweightInKg * 5, maxEgcgDose)};
             visbiomeDose = { 'pkg': bodyweightInKg / 68, 'cap': bodyweightInKg / 17 };
             dhaDose = { 'mg': bodyweightInKg * 5};
             lrcDose = { 'mg' : bodyweightInKg * 1.5};
@@ -493,6 +493,7 @@
                     { 'name': 'Apiginen', 'dose': apigDose, 'amount': 1}
                 ];
                 if (canHaveEnzyme) { eveDosageItems.splice(3, 0, { 'name': 'Enzyme', 'dose': enzymeDose, 'amount': 0.5 }); }
+                if (withEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 0.4 }); }
                 if (withoutEgcg) { eveDosageItems.push({ 'name': 'EGCG', 'dose': egcgDose, 'amount': 1 }); }
 
                 html += resultBlock("Evening", eveDosageItems);
