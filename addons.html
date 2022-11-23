@@ -239,8 +239,8 @@
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
             var glutathioneTylenolDose = { 'mg': Math.round(bodyweightInKg * 8)};
             var valerianDose = { 'mg': Math.round(bodyweightInKg * 6)};
-            var lithiumDose = { 'mg': Math.round(bodyweightInKg * 0.7) / 10};
-            var melatoninDose = null
+            var melatoninDose = null;
+            var lithiumDose = { 'mg': 0.5};
             
             if($("input[name=age-btn]:checked").val() == "inf"){
                 melatoninDose = { 'mg': 1.0};
@@ -249,10 +249,14 @@
                 melatoninDose = { 'mg': 3.0};
                 
             }else if($("input[name=age-btn]:checked").val() == "child"){
-                melatoninDose = { 'mg': 3.0};
-                
+                if (bodyweightInKg > 40) {
+                    melatoninDose = { 'mg': 5.0};
+                } else { // bodyweightInKg <= 40
+                    melatoninDose = { 'mg': 3.0};
+                }
             }else if($("input[name=age-btn]:checked").val() == "adult"){
                 melatoninDose = { 'mg': 6.0};
+                lithiumDose = { 'mg': 1.0};
                 piracetamMaxDose.mg = Math.round(bodyweightInKg * 50)
                 cholineMaxDose.mg = Math.round(bodyweightInKg * 16.67)
             }
