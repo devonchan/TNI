@@ -342,6 +342,7 @@
         
         var curcuminDose = null;
         var egcgDose = null;
+        var maxEgcgDose = 300;
         var visbiomeDose = null;
         var dhaDose = null;
         var lrcDose = null;
@@ -387,7 +388,7 @@
 
             polyphenolDose = { 'cap': Math.min(bodyweightInKg / 17,  maxPolyphenolDose)}
             curcuminDose = { 'mg': bodyweightInKg * 30};
-            egcgDose = { 'mg': bodyweightInKg * 5};
+            egcgDose = { 'mg': bodyweightInKg * 5, maxEgcgDose};
             visbiomeDose = { 'pkg': bodyweightInKg / 68, 'cap': bodyweightInKg / 17 };
             dhaDose = { 'mg': bodyweightInKg * 5};
             lrcDose = { 'mg' : bodyweightInKg * 1.5};
